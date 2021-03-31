@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Saras
@@ -13,12 +14,18 @@
     <c:url value="/css/main.css" var="jstlCss" />
     <link href="${jstlCss}" rel="stylesheet" />
     <title>Skaiciuotuvas</title>
+    <style>
+        .error{color:red}
+    </style>
 </head>
 <body>
  <h2>Internetinis skaiciuotuvas. Galimos operacijos: sudeti, atimti, dauginti, dalinti</h2>
-<form method="post" action="skaiciuoti">
-    Pirmas skaicius: <input type="number" name="sk1"><p>
-    Antras skaicius: <input type="number" name="sk2"><p>
+ <h3>Skaiciuotuvas jautrus negiamiems skaiciams ;)</h3>
+ <form:form method="post" action="skaiciuoti" modelAttribute="number">
+    Pirmas skaicius: <form:input type="number" name="sk1" path="sk1"/>
+                     <form:errors path="sk1" cssClass="error"/><br><br>
+    Antras skaicius: <form:input type="number" name="sk2" path="sk2"/>
+                     <form:errors path="sk2" cssClass="error"/><br><br>
     Operacijos zenklas:
     <select name="zenklas">
         <option selected="selected" value="+">Sudetis</option>
@@ -27,6 +34,6 @@
         <option value="/">Dalyba</option>
     </select><p>
     <input type="submit" value="skaiciuoti">
-</form>
+</form:form>
 </body>
 </html>
