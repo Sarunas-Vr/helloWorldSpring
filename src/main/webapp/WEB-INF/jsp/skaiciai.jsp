@@ -7,9 +7,9 @@
     <title>Skaiciai</title>
     <jsp:include page="header.jsp" />
 </head>
-<body>
-    <div>
-        <table>
+<body class="container">
+    <div class="table-responsive">
+        <table class="table table-striped">
             <tr>
                 <th>Pirmas skaicius</th>
                 <th>Zenklas</th>
@@ -21,6 +21,16 @@
         <%-- Iteruoja per visa skaiciu sarasa --%>
             <c:forEach var="skaicius" items="${skaiciai}">
 
+                <%-- konstruoja iraso atnaujinimo adresa su skaiciaus id --%>
+                <c:url var="atnaujinti" value="/atnaujinti">
+                    <c:param name="id" value="${skaicius.id}"/>
+                </c:url>
+
+                <%--  --%>
+
+                <%--  --%>
+
+
                 <tr>
                     <td>${skaicius.sk1}</td>
                     <td>${skaicius.zenklas}</td>
@@ -28,14 +38,13 @@
                     <td>${skaicius.result}</td>
                     <td>
                     <%--   atvaizduoti atnaujinimo adresa --%>
-                        <a>Keisti</a>
-                        <a>Trinti</a>
-                        <a>Rodyti</a>
+                        <a href="${atnaujinti}">Keisti</a>
+                        <a href="${trinti}"
+                            onclick="if (!(confirm('Ar tikrai norite istrinti si irasa?'))) return false">Trinti</a>
+                    <%-- atvaizduoti rodymo adresa --%>
+                        <a href="${rodyti}">Rodyti</a>
                     </td>
-
                 </tr>
-
-
             </c:forEach>
         </table>
     </div>
