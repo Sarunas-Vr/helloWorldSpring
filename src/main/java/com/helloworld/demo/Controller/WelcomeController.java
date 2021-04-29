@@ -1,6 +1,5 @@
 package com.helloworld.demo.Controller;
 
-import com.sun.javafx.collections.MappingChange;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Value;
