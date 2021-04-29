@@ -95,6 +95,12 @@ public class CalculatorController {
     @RequestMapping(method = RequestMethod.GET, value = "/trinti{id}")
     public String delete(@RequestParam("id") int id, Model model) {
         numberService.delete(id);
+        model.addAttribute("skaiciai", numberService.getAll());
+        return "skaiciai";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/atnaujinti{id}")
+    public String update(@RequestParam("id") int id, Model model) {
         model.addAttribute("skaicius", numberService.getById(id));
         return "atnaujinti";
     }
