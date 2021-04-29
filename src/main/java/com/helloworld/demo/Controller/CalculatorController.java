@@ -35,7 +35,7 @@ public class CalculatorController {
     @Qualifier("NumberService")
     public NumberService numberService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/namai")
+    @RequestMapping(method = RequestMethod.GET, value = "/")
     // Marsrutizavimo informacija. Siuo atveju, ji nurodo Spring karkasui,
     // jog visas HTTP uzklausas, kuriu kelias yra "/" apdoros metodas "namai".
     String home(Model model) {

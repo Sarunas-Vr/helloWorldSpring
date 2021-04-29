@@ -18,9 +18,9 @@
  <h3>Skaiciuotuvas jautrus negiamiems skaiciams ;)</h3>
  <form:form method="post" action="skaiciuoti" modelAttribute="number">
     Pirmas skaicius: <form:input type="number" name="sk1" path="sk1"/>
-                     <form:errors path="sk1" cssClass="error"/><br><br>
+                     <form:errors path="sk1" cssClass="error"/><br>
     Antras skaicius: <form:input type="number" name="sk2" path="sk2"/>
-                     <form:errors path="sk2" cssClass="error"/><br><br>
+                     <form:errors path="sk2" cssClass="error"/><br>
     Operacijos zenklas:
     <select name="zenklas">
         <option selected="selected" value="+">Sudetis</option>

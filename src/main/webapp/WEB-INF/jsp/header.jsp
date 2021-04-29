@@ -12,7 +12,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="http://localhost:8090">Skaiciuotuvas</a>
+            <a class="navbar-brand" href="http://localhost:8081">Skaiciuotuvas</a>
         </div>
         <ul class="nav navbar-nav navbar-left">
             <li class="active"><a href="/skaiciai">Atliktos operacijos</a></li>

@@ -18,7 +18,7 @@
                 <th>Veiksmas</th>
             </tr>
 
-        <%-- Iteruoja per visa skaiciu sarasa --%>
+            <%-- Iteruoja per visa skaiciu sarasa --%>
             <c:forEach var="skaicius" items="${skaiciai}">
 
                 <%-- konstruoja iraso atnaujinimo adresa su skaiciaus id --%>
@@ -26,10 +26,15 @@
                     <c:param name="id" value="${skaicius.id}"/>
                 </c:url>
 
-                <%--  --%>
+                <%-- konstruoja iraso trynimo adresa su skaiciaus id --%>
+                <c:url var="trinti" value="/trinti">
+                    <c:param name="id" value="${skaicius.id}"/>
+                </c:url>
 
-                <%--  --%>
-
+                <%-- konstruoja iraso perziuros adresa su skaiciaus id --%>
+                <c:url var="rodyti" value="/rodyti">
+                    <c:param name="id" value="${skaicius.id}"/>
+                </c:url>
 
                 <tr>
                     <td>${skaicius.sk1}</td>
