@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td><b>Rezultatas:</b></td>
-                <td>${skaicius.result}</td>
+                <td>${skaicius.rezultatas}</td>
             </tr>
         </table>
     </div>

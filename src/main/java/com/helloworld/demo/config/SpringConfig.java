@@ -1,4 +1,4 @@
-package com.helloworld.demo.Controller;
+package com.helloworld.demo.config;
 
 import com.helloworld.demo.Controller.model.NumberDAO;
 import com.helloworld.demo.Controller.model.NumberDAOImpl;
@@ -32,6 +32,6 @@ public class SpringConfig {
     @Bean
     @Qualifier("NumberService")
     public NumberService getNumberService() {
-        return (NumberService) new NumberServiceImpl();
+        return new NumberServiceImpl();
     }
 }
