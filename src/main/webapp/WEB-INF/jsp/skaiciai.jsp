@@ -1,19 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
-    <title>Skaiciai</title>
+    <title>Skaičiai</title>
     <jsp:include page="header.jsp" />
 </head>
 <body class="container">
     <div class="table-responsive">
         <table class="table table-striped">
             <tr>
-                <th>Pirmas skaicius</th>
-                <th>Zenklas</th>
-                <th>Antras skaicius</th>
+                <th>Pirmas skaičius</th>
+                <th>Ženklas</th>
+                <th>Antras skaičius</th>
                 <th>Rezultatas</th>
                 <th>Veiksmas</th>
             </tr>

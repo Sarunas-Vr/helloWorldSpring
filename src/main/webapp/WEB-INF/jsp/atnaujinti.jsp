@@ -2,18 +2,18 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Skaiciaus atnaujinimas</title>
+    <title>Skaičiaus atnaujinimas</title>
     <jsp:include page="header.jsp" />
 </head>
 <body>
     <form:form name="skaicius" action="/atnaujintiSkaiciu" method="post">
         <%-- id butina pateikti formoje, kitaip i back-end nueis null. Todel darome hidden kad neredaguotu --%>
         <input type="hidden" name="id" value="${skaicius.id}"><p>
-        Pirmas skaicius:<br>
+        Pirmas skaičius:<br>
         <input type="number" name="sk1" value="${skaicius.sk1}"><p>
-        Zenklas:<br>
+        Ženklas:<br>
         <input type="text" name="zenklas" value="${skaicius.zenklas}"><p>
-        Antras skaicius:<br>
+        Antras skaičius:<br>
         <input type="number" name="sk2" value="${skaicius.sk2}"><p>
         Rezultatas:<br>
         <input type="number" name="result" value="${skaicius.result}"><p>
