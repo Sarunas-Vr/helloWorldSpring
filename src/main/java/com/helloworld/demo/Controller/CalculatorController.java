@@ -1,7 +1,11 @@
 package com.helloworld.demo.Controller;
 
 import com.helloworld.demo.Controller.model.Number;
+import com.helloworld.demo.Controller.model.User;
 import com.helloworld.demo.Controller.service.NumberService;
+import com.helloworld.demo.Controller.service.SecurityService;
+import com.helloworld.demo.Controller.service.UserService;
+import com.helloworld.demo.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -9,10 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
@@ -24,6 +25,15 @@ import java.util.HashMap;
 // Siuo atveju ji veikia kartu su main metodu.
 @EnableAutoConfiguration
 public class CalculatorController {
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private SecurityService securityService;
+
+    @Autowired
+    private UserValidator userValidator;
+
     // @Autowire - naudojamas automatinei priklausomybiu injekcijai
     // Kad panaudoti @Autowire anotacija, reikia pirmiausia tureti apsirasius @Bean @Configuration klaseje
     @Autowired
@@ -35,7 +45,9 @@ public class CalculatorController {
     @Qualifier("NumberService")
     public NumberService numberService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/")
+//    @RequestMapping(method = RequestMethod.GET, value = "/")
+    @GetMapping({"/", "/skaiciuotuvas"})
+
     // Marsrutizavimo informacija. Siuo atveju, ji nurodo Spring karkasui,
     // jog visas HTTP uzklausas, kuriu kelias yra "/" apdoros metodas "namai".
     String home(Model model) {
@@ -110,6 +122,27 @@ public class CalculatorController {
     public String updateNumber(@ModelAttribute("skaicius") Number number) {
         numberService.update(number);
         return "redirect:/rodyti?id=" + number.getId();
+    }
+
+    @GetMapping("/registruoti")
+    public String registration(Model model) {
+        model.addAttribute("userForm", new User());
+
+        return "registruoti";
+    }
+    @PostMapping("/registruoti")
+    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
+        userValidator.validate(userForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "registruoti";
+        }
+
+        userService.save(userForm);
+
+        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+
+        return "redirect:/skaiciuotuvas";
     }
 }
 
