@@ -144,6 +144,16 @@ public class CalculatorController {
 
         return "redirect:/skaiciuotuvas";
     }
+
+    @GetMapping("/prisijungti")
+    public String login(Model model, String error, String logout) {
+        if(error != null)
+            model.addAttribute("error", "Ivestas prisijungimo vardas ir/ arba slaptazodis yra neteisingi");
+
+        if(logout != null)
+            model.addAttribute("message", "Sekmingai atsijungete");
+        return "prisijungti";
+    }
 }
 
 

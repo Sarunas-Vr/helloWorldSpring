@@ -5,7 +5,7 @@
     <title>Skaičiaus atnaujinimas</title>
     <jsp:include page="header.jsp" />
 </head>
-<body>
+<body class="container">
     <form:form name="skaicius" action="/atnaujintiSkaiciu" method="post">
         <%-- id butina pateikti formoje, kitaip i back-end nueis null. Todel darome hidden kad neredaguotu --%>
         <input type="hidden" name="id" value="${skaicius.id}"><p>

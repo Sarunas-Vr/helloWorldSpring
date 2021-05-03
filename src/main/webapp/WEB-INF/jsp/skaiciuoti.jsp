@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,6 +10,7 @@
 
     <title>Skaičiuoti</title>
     <jsp:include page="header.jsp" />
+    <jsp:include page="menu.jsp"/>
 </head>
 <body>
  <h4>${sk1} ${zenklas} ${sk2} = ${rezultatas}</h4>
