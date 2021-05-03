@@ -6,6 +6,8 @@
 <head>
     <title>Skaičiai</title>
     <jsp:include page="header.jsp" />
+    <jsp:include page="menu.jsp"/>
+
 </head>
 <body class="container">
     <div class="table-responsive">
@@ -54,4 +56,5 @@
         </table>
     </div>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>

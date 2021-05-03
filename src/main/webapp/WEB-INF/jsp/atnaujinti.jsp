@@ -4,6 +4,8 @@
 <head>
     <title>Skaičiaus atnaujinimas</title>
     <jsp:include page="header.jsp" />
+    <jsp:include page="menu.jsp" />
+
 </head>
 <body class="container">
     <form:form name="skaicius" action="/atnaujintiSkaiciu" method="post">
@@ -20,4 +22,5 @@
         <input type="submit" value="atnaujinti">
     </form:form>
 </body>
+<jsp:include page="footer.jsp" />
 </html>

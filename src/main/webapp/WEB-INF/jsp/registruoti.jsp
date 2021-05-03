@@ -24,7 +24,7 @@
 
             <spring:bind path="password">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <form:input path="password" type="password" class="form-control" placeholder="Slaptazdis"></form:input>
+                    <form:input path="password" type="password" class="form-control" placeholder="Slaptažodis"></form:input>
                     <form:errors path="password"></form:errors>
                 </div>
             </spring:bind>
@@ -32,7 +32,7 @@
 
             <spring:bind path="passwordConfirm">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <form:input path="passwordConfirm" type="password" class="form-control" placeholder="Slaptazodzio patvitrtinimas"></form:input>
+                    <form:input path="passwordConfirm" type="password" class="form-control" placeholder="Slaptažodžio patvitrtinimas"></form:input>
                     <form:errors path="passwordConfirm"></form:errors>
                 </div>
             </spring:bind>

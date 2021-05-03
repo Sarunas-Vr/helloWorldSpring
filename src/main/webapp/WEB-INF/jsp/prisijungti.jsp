@@ -11,7 +11,7 @@
     <jsp:include page="header.jsp"/>
 </head>
 <body>
-    <h1 class="text-center">Internetinis skaiciuotuvas</h1>
+    <h1 class="text-center">Internetinis skaičiuotuvas</h1>
     <div class="container">
         <form method="POST" action="${contextPath}/prisijungti" class="form-signin">
             <h3 class="form-header">Prisijungimas</h3>
@@ -19,7 +19,7 @@
                 <span>${message}</span>
                 <input name="username" type="text" class="form-control" placeholder="Prisijungimo vardas"
                 autofocus="true"/>
-                <input name="password" type="password" class="form-control" placeholder="Slaptazodis" />
+                <input name="password" type="password" class="form-control" placeholder="Slaptažodis" />
                 <span>${error}</span>
                 <%--
                     Web aplikacijai naudotojui turetu isduoti papildoma parametra, kuris nebutu nuspejamas piktavaliui.
@@ -28,7 +28,7 @@
                  --%>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Prisijungti</button>
-                <h4 class="text-center"><a href="${contextPath}/registruoti">Sukurti nauja paskyra</a></h4>
+                <h4 class="text-center"><a href="${contextPath}/registruoti">Sukurti naują paskyrą</a></h4>
             </div>
         </form>
     </div>
