@@ -96,6 +96,20 @@
             <artifactId>hibernate-core</artifactId>
             <version>5.4.29.Final</version>
         </dependency>
+        <!-- Vartotoju autentifikacijai ir autorizacijai -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- Repozitorijoms, kur nereikia rupintis paprastomis uzklausomis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
