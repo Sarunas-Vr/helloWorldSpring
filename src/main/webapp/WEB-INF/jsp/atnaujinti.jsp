@@ -18,7 +18,7 @@
         Antras skaičius:<br>
         <input type="number" name="sk2" value="${skaicius.sk2}"><p>
         Rezultatas:<br>
-        <input type="number" name="result" value="${skaicius.rezultatas}"><p>
+        <input type="number" name="result" value="${skaicius.result}"><p>
         <input type="submit" value="atnaujinti">
     </form:form>
 </body>
