@@ -1,6 +1,6 @@
 package com.helloworld.demo.repository;
 
-import com.helloworld.demo.Controller.model.User;
+import com.helloworld.demo.Controller.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -26,5 +26,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
         Galima patikslinti, ko tiksliau ieskome:
             findFirst.., findTop.., findDistinct.., findUser.., findFirstUser.., findDistinctUser..
 */
-public interface RoleRepository extends JpaRepository<User, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
 }

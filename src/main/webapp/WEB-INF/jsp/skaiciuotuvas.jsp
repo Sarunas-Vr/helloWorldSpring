@@ -10,15 +10,16 @@
     <link href="${jstlCss}" rel="stylesheet" />
     <title>Skaičiuotuvas</title>
     <jsp:include page="header.jsp" />
+    <jsp:include page="menu.jsp"/>
     <style>
         .error{color:red}
     </style>
 </head>
-<body>
- <h2>Internetinis skaičiuotuvas. Galimos operacijos: sudėti, atimti, dauginti, dalinti</h2>
- <h3>Skaičiuotuvas jautrus negiamiems skaičiams ;)</h3>
+<body class="container">
+ <h2>Galimos operacijos: sudėti, atimti, dauginti, dalinti</h2>
+ <h3>Skaičiuotuvas jautrus neigiamiems skaičiams ;)</h3>
  <form:form method="post" action="skaiciuoti" modelAttribute="number">
-    Pirmas skaičius: <form:input type="number" name="sk1" path="sk1"/>
+    Pirmas skaičius: <form:input type="number" path="sk1"/>
                      <form:errors path="sk1" cssClass="error"/><br>
     Antras skaičius: <form:input type="number" name="sk2" path="sk2"/>
                      <form:errors path="sk2" cssClass="error"/><br>
@@ -28,8 +29,9 @@
         <option value="-">Atimtis</option>
         <option value="*">Daugyba</option>
         <option value="/">Dalyba</option>
-    </select><p>
-    <input type="submit" value="skaiciuoti">
+    </select><br><br>
+    <input type="submit" value="skaičiuoti">
 </form:form>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>
