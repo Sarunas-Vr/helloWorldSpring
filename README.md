@@ -1,7 +1,7 @@
 # 1. Build Executable .JAR file ( 2 steps, configuring & creating )
-    ```
+    
     JavaFX SDK official download ( https://gluonhq.com/products/javafx/ )
-    ```
+    
 ## 1.1 #### Configuring .JAR to be Created  ####
 
     ```
